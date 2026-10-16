@@ -1,0 +1,5 @@
+calibration: B 0.6091  G 1.4333  H -0.5636  own_gain 0.1777  harm 0.0133  benefit 0.1774  lies 3.8333  believers_per_lie 2.1043
+  net private gain per lie at lam=0.0: 0.3239   phi_lo = 1.6196   lie pays without credit iff lam < 0.930 (ignoring c)
+  TVC (fine 15, default)           lie_rate 0.002±0.001  useful_report_rate 0.988±0.007  throughput 0.022±0.001  spend 0.040±0.002
+  TVC no gate (tau 1e6)            lie_rate 0.993±0.000  useful_report_rate 0.966±0.009  throughput 0.007±0.000  spend 0.021±0.001
+-> /Users/nhanncv/personal/research/tvc/logs/fake_jams_ablate_gate.md

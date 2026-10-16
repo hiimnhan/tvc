@@ -1,0 +1,20 @@
+
+naive receivers, last 100 episodes (mean ± 95% CI over runs)
+  none       inflation 0.747±0.004  report 0.803±0.004  misled 0.246±0.009  welfare 3.510±0.111  explore 0.027±0.003  credit 0.000±0.000
+  popularity inflation 0.930±0.004  report 0.940±0.004  misled 0.429±0.011  welfare 4.048±0.075  explore 0.045±0.002  credit 1.291±0.056
+  accuracy   inflation 0.677±0.025  report 0.887±0.004  misled 0.140±0.013  welfare 3.944±0.120  explore 0.030±0.002  credit 2.713±0.197
+  tvc        inflation 0.006±0.001  report 0.993±0.002  misled 0.003±0.001  welfare 4.033±0.087  explore 0.030±0.002  credit 2.937±0.160
+  shared     inflation 0.726±0.054  report 0.799±0.044  misled 0.326±0.048  welfare 4.051±0.121  explore 0.236±0.030  credit 0.000±0.000
+  explore    inflation 0.743±0.012  report 0.792±0.012  misled 0.420±0.018  welfare 4.303±0.063  explore 0.168±0.026  credit 3.000±0.000
+  fine       inflation 0.059±0.010  report 0.504±0.028  misled 0.026±0.004  welfare 3.258±0.113  explore 0.024±0.003  credit 0.000±0.000
+  pop_fine   inflation 0.400±0.016  report 0.827±0.025  misled 0.333±0.014  welfare 3.834±0.074  explore 0.033±0.002  credit 1.400±0.086
+
+calibrated receivers, last 100 episodes (mean ± 95% CI over runs)
+  none       inflation 0.745±0.004  report 0.800±0.003  misled 0.072±0.004  welfare 3.597±0.140  explore 0.026±0.003  credit 0.000±0.000
+  popularity inflation 0.905±0.005  report 0.925±0.005  misled 0.014±0.005  welfare 4.075±0.097  explore 0.032±0.002  credit 1.168±0.072
+  accuracy   inflation 0.831±0.013  report 0.898±0.004  misled 0.036±0.007  welfare 4.083±0.105  explore 0.033±0.002  credit 2.828±0.242
+  tvc        inflation 0.006±0.001  report 0.992±0.001  misled 0.003±0.001  welfare 3.927±0.106  explore 0.028±0.003  credit 3.135±0.229
+  shared     inflation 0.674±0.070  report 0.841±0.033  misled 0.040±0.009  welfare 4.185±0.167  explore 0.237±0.034  credit 0.000±0.000
+  explore    inflation 0.748±0.012  report 0.791±0.011  misled 0.088±0.007  welfare 4.394±0.068  explore 0.154±0.026  credit 3.000±0.000
+  fine       inflation 0.060±0.012  report 0.505±0.031  misled 0.018±0.003  welfare 3.133±0.139  explore 0.022±0.003  credit 0.000±0.000
+  pop_fine   inflation 0.345±0.025  report 0.820±0.024  misled 0.029±0.005  welfare 3.862±0.079  explore 0.025±0.002  credit 1.286±0.115

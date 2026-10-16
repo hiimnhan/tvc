@@ -1,0 +1,111 @@
+\section{Proofs}
+\label{app:proofs}
+
+We prove \cref{prop:dominance} and the fine rule \cref{eq:fine} in a game-theoretic setting. Credit is measured in units of the mean value, $\vbar=1$.
+
+\subsection{The game}
+The \emph{player} is sender $i$, who has found an arm of true value $\theta$ and reports it exactly (observation noise is treated in \cref{rem:noise}). Its pure strategies are the reports $m\in\mathcal M=\{\varnothing\}\cup\mathbb R_{>0}$. Every other agent, receivers and senders alike, is collapsed into an \emph{opponent profile} $\sigma_{-i}$: any map from the posted claim to a distribution over their actions. It may be mixed, history-dependent, learning or adversarial. The audit draw $a\sim\mathrm{Bernoulli}(p)$ is a chance move, independent of $m$ and of $\sigma_{-i}$ (A3).
+
+Given the claim $m$ and $\sigma_{-i}$, the opponents produce a random pair $(f,X)$. Here $f\in\{0,1\}$ indicates that some receiver follows $i$, and $X=\sum_{j:\,d_j=i}V\min(g_{ji},\Bbar)\ge0$ is the gain credit. The gate gives $X=0$ for every claim that is not verified. By lie separation (A4), a truthful claim $m=\theta$ is verified and every other claim is not, so
+\begin{equation}
+  X=0 \text{ for } m\neq\theta,\qquad X\ge 0 \text{ arbitrary for } m=\theta,
+  \label{eq:gate}
+\end{equation}
+and the checked indicator is $c=\mathbb 1[m\neq\varnothing]\max(a,f)$. Sender $i$'s expected payoff is
+\[
+  U_i(m;\sigma_{-i}) \;=\; u_i^{0} + \Pi(m;\sigma_{-i}),\qquad \Pi(m;\sigma_{-i})=\mathbb E\big[C_i(m)\big],
+\]
+where the expectation is over $a$ and over the opponents' randomization, and $u_i^{0}$ is the payoff from its own pulls. By separability (A1), $u_i^{0}$ does not depend on $m$, so comparing reports reduces to comparing $\Pi$.
+
+\begin{definition}[Receiver-robust dominance]
+  \label{def:dominance}
+  Truthful reporting $m=\theta$ is \emph{strictly dominant with margin $\Delta>0$} if, for every opponent profile $\sigma_{-i}$ and every report $m\neq\theta$ (silence included), $\Pi(\theta;\sigma_{-i})-\Pi(m;\sigma_{-i})\ge\Delta$.
+\end{definition}
+
+Since $\sigma_{-i}$ is arbitrary, \cref{def:dominance} asks for a \emph{dominant} strategy, not an equilibrium strategy against one fixed receiver model.
+
+\subsection{Payoffs of the three kinds of report}
+Let $q=\Pr[f=1]$ under $\sigma_{-i}$, and let $\sbar=\sup_{|m/\theta-1|>\tau}S(m,\theta)<1$.
+
+\begin{lemma}[Truth]
+  \label{lem:truth}
+  For every $\sigma_{-i}$, $\Pi(\theta;\sigma_{-i})\ge p\eta$.
+\end{lemma}
+\begin{proof}
+  A truthful claim has $V=1$ and $S(\theta,\theta)=1$, so the fine is $0$ and $C_i=X+c\,\eta$. Because $a$ is independent of $f$, $\mathbb E[c]=1-(1-p)(1-q)\ge p$. With $X\ge0$ this gives $\Pi(\theta;\sigma_{-i})=\mathbb E[X]+\eta\,\mathbb E[c]\ge p\eta$.
+\end{proof}
+
+\begin{lemma}[Lie]
+  \label{lem:lie}
+  For every $\sigma_{-i}$ and every lie $m\neq\theta,\varnothing$, $\Pi(m;\sigma_{-i})\le \eta\sbar-p\varphi$.
+\end{lemma}
+\begin{proof}
+  By \cref{eq:gate}, $V=0$ and $X=0$, so $C_i=c\,\eta\,S(m,\theta)-a\varphi$. Since $0<S(m,\theta)\le\sbar$ and $c\le1$, $\mathbb E[c\,S(m,\theta)]\le\sbar$, and $\mathbb E[a]=p$ gives $\mathbb E[a\varphi]=p\varphi$. Hence $\Pi(m;\sigma_{-i})\le\eta\sbar-p\varphi$.
+\end{proof}
+
+\begin{lemma}[Silence]
+  \label{lem:silence}
+  For every $\sigma_{-i}$, $\Pi(\varnothing;\sigma_{-i})=0$.
+\end{lemma}
+\begin{proof}
+  Silence posts no claim, so no receiver can follow it, $X=0$, $c=0$ and no fine applies.
+\end{proof}
+
+The bound of \cref{lem:lie} is the best case of a lie, reached when it is followed with probability $1$; if it is not followed, $\Pi(m)=p(\eta\mathbb E[S]-\varphi)\le p(\eta\sbar-\varphi)\le\eta\sbar-p\varphi$.
+
+\subsection{Dominance of truth}
+\begin{theorem}[\cref{prop:dominance}]
+  \label{thm:dominance}
+  If $p(\eta+\varphi)>\eta\sbar$ and $\eta>0$, truthful reporting is strictly dominant: for every $\sigma_{-i}$,
+  \[
+    \Pi(\theta;\sigma_{-i})-\Pi(m;\sigma_{-i})\ \ge\ \Delta=p(\eta+\varphi)-\eta\sbar\quad\text{for every lie } m,\qquad
+    \Pi(\theta;\sigma_{-i})-\Pi(\varnothing;\sigma_{-i})\ \ge\ p\eta .
+  \]
+  The condition is also necessary: if the claim set contains lies with scores arbitrarily close to $\sbar$ and $p(\eta+\varphi)\le\eta\sbar$, some opponent profile makes a lie at least as good as truth.
+\end{theorem}
+\begin{proof}
+  Sufficiency follows from \cref{lem:truth,lem:lie,lem:silence}: $\Pi(\theta)-\Pi(m)\ge p\eta-(\eta\sbar-p\varphi)=\Delta>0$ for a lie, and $\Pi(\theta)-\Pi(\varnothing)\ge p\eta>0$. Both bounds hold for every $\sigma_{-i}$, so the margin is $\min\{\Delta,p\eta\}$.
+
+  For necessity, let the receivers follow every inflated claim and ignore every truthful one. Then $f=0$ for $m=\theta$, so $X=0$ and $\mathbb E[c]=p$, and $\Pi(\theta)=p\eta$ exactly. A lie with score $S\to\sbar$ is followed, so $c=1$ and $\Pi(m)=\eta S-p\varphi\to\eta\sbar-p\varphi$. Truth is not strictly better if $p\eta\le\eta\sbar-p\varphi$.
+\end{proof}
+
+\begin{corollary}[Dominant-strategy equilibrium]
+  \label{cor:equilibrium}
+  Under the condition of \cref{thm:dominance}, all senders reporting truthfully is a dominant-strategy equilibrium of the game among senders, and hence a Nash equilibrium, whatever rule the receivers use.
+\end{corollary}
+\begin{proof}
+  The bounds hold for every $\sigma_{-i}$, which includes the strategies of all other senders and of all receivers. Each sender's truthful report is therefore a strictly best response to every profile of the others.
+\end{proof}
+
+\subsection{Outside gain and the fine}
+Let a lie also bring its sender an outside gain, net of any cost the truthful report also bears, of at most $\Gamma\ge0$, where $\Gamma=(1-\lambda)G_1-\lambda D_1-c$ as in \cref{sec:cost}. The outside gain does not depend on the credit, so it adds to the lie's side: $U_i(m)\le u_i^0+\Gamma+\eta\sbar-p\varphi$.
+
+\begin{proposition}[Fine rule, \cref{eq:fine}]
+  \label{prop:fine}
+  Truthful reporting is strictly dominant over every lie if and only if
+  \[
+    \varphi>\philo=\frac{\eta\sbar+\Gamma}{p}-\eta .
+  \]
+  Against silence, a lie is never better when $\varphi>(\eta\sbar+\Gamma)/p$, which equals $\Gamma/p$ when lies score $\sbar\approx0$.
+\end{proposition}
+\begin{proof}
+  By \cref{lem:truth}, truth earns at least $p\eta$, and by \cref{lem:lie} a lie earns at most $\eta\sbar-p\varphi+\Gamma$. Truth is strictly better if $p\eta>\eta\sbar-p\varphi+\Gamma$, which rearranges to $\varphi>(\eta\sbar+\Gamma)/p-\eta$. The two bounds are attained by the same opponent profile as in \cref{thm:dominance}, so the condition is also necessary. Against silence, which earns $0$, a lie earns at most $\eta\sbar-p\varphi+\Gamma$, which is negative exactly when $\varphi>(\eta\sbar+\Gamma)/p$.
+\end{proof}
+
+\subsection{Remarks}
+\begin{remark}[Observation noise]
+  \label{rem:noise}
+  With noise $\sigma>0$ an honest agent reports $y=\theta e^{\epsilon}$ and not $\theta$. Its score is $s_T=S(y,\theta)\le1$, so \cref{lem:truth} gives $\Pi\ge p\eta s_T$ when $y$ passes the gate, and the condition becomes $p(\eta s_T+\varphi)>\eta\sbar$. It is met by a larger fine. The noise is unbounded, so an honest report fails the gate with a small probability $\delta_\tau$ that falls as $\tau$ grows, and the margin falls by at most that probability times the credit it forfeits.
+\end{remark}
+
+\begin{remark}[Repeated play]
+  The analysis is of the stage game. It carries over to repeated play when future credit and future receiver behaviour do not depend on today's claim except through $C_i$ (A5); otherwise a sender may also weigh the effect of a claim on later rounds.
+\end{remark}
+
+\section{Notation}
+\label{app:notation}
+\todo{Port the notation table from THEORY.md.}
+
+\section{Experimental Details}
+\label{app:details}
+\todo{Hyperparameters, calibration procedure, compute, seeds.}

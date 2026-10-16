@@ -1,0 +1,11 @@
+calibration: B 0.6091  G 1.4333  H -0.5636  own_gain 0.1777  harm 0.0133  benefit 0.1774  lies 3.8333  believers_per_lie 2.1043
+  net private gain per lie at lam=0.0: 0.3239   phi_lo = 1.6196   lie pays without credit iff lam < 0.930 (ignoring c)
+fine sweep around phi_lo = 2.2516
+  tvc        0.0    lie_rate 0.993±0.000  useful_report_rate 0.966±0.009  throughput 0.007±0.000  spend 0.021±0.001
+  tvc        0.5629 lie_rate 0.990±0.001  useful_report_rate 0.977±0.006  throughput 0.007±0.000  spend 0.015±0.001
+  tvc        1.1258 lie_rate 0.983±0.001  useful_report_rate 0.975±0.005  throughput 0.007±0.000  spend 0.010±0.001
+  tvc        2.2516 lie_rate 0.624±0.026  useful_report_rate 0.982±0.004  throughput 0.010±0.000  spend 0.011±0.001
+  tvc        4.5033 lie_rate 0.009±0.003  useful_report_rate 0.991±0.005  throughput 0.022±0.001  spend 0.040±0.001
+  tvc        9.0065 lie_rate 0.002±0.001  useful_report_rate 0.990±0.005  throughput 0.022±0.001  spend 0.040±0.001
+  tvc        18.013 lie_rate 0.001±0.000  useful_report_rate 0.986±0.006  throughput 0.022±0.001  spend 0.041±0.001
+-> /Users/nhanncv/personal/research/tvc/logs/fake_jams_fine.md

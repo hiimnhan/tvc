@@ -1,0 +1,15 @@
+calibration: B 0.1061  G 1.7333  H -0.5667  own_gain 0.1683  harm 0.0126  benefit 0.0884  lies 4.4000  believers_per_lie 2.3409
+  net private gain per lie at lam=0.0: 0.3439   phi_lo = 1.7197   lie pays without credit iff lam < 0.930 (ignoring c)
+  gain x0.5: none                  lie_rate 0.980±0.002  useful_report_rate 0.434±0.042  throughput 0.007±0.000  spend 0.000±0.000
+  gain x0.5: TVC fine 0.76 (phi_lo) lie_rate 0.849±0.016  useful_report_rate 0.985±0.006  throughput 0.008±0.000  spend 0.017±0.001
+  gain x0.5: TVC fine 1.52 (2 phi_lo) lie_rate 0.077±0.025  useful_report_rate 0.990±0.011  throughput 0.021±0.001  spend 0.039±0.002
+  gain x0.5: TVC fine 15 (default) lie_rate 0.001±0.001  useful_report_rate 0.988±0.011  throughput 0.022±0.002  spend 0.042±0.003
+  gain x1: none                    lie_rate 0.992±0.001  useful_report_rate 0.442±0.044  throughput 0.007±0.000  spend 0.000±0.000
+  gain x1: TVC fine 1.77 (phi_lo)  lie_rate 0.847±0.039  useful_report_rate 0.985±0.004  throughput 0.009±0.001  spend 0.012±0.001
+  gain x1: TVC fine 3.53 (2 phi_lo) lie_rate 0.034±0.017  useful_report_rate 0.984±0.016  throughput 0.021±0.001  spend 0.041±0.004
+  gain x1: TVC fine 15 (default)   lie_rate 0.002±0.001  useful_report_rate 0.991±0.012  throughput 0.023±0.002  spend 0.042±0.001
+  gain x2: none                    lie_rate 0.997±0.000  useful_report_rate 0.441±0.030  throughput 0.007±0.000  spend 0.000±0.000
+  gain x2: TVC fine 3.78 (phi_lo)  lie_rate 0.854±0.061  useful_report_rate 0.977±0.005  throughput 0.009±0.001  spend 0.007±0.001
+  gain x2: TVC fine 7.56 (2 phi_lo) lie_rate 0.033±0.034  useful_report_rate 0.992±0.004  throughput 0.022±0.001  spend 0.041±0.001
+  gain x2: TVC fine 15 (default)   lie_rate 0.002±0.002  useful_report_rate 0.990±0.011  throughput 0.022±0.001  spend 0.042±0.002
+-> /Users/nhanncv/personal/research/credit-hype-honest-exploration/logs/fake_jams_sensitivity.md

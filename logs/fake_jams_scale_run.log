@@ -1,0 +1,27 @@
+calibration: B 0.4524  G 2.0667  H -0.6143  own_gain 0.2480  harm 0.0289  benefit 0.3878  lies 4.9000  believers_per_lie 1.7007
+  net private gain per lie at lam=0.0: 0.3718   phi_lo = 1.8588   lie pays without credit iff lam < 0.896 (ignoring c)
+  3x3 N=8   none       lie_rate 0.995±0.001  useful_report_rate 0.399±0.041  throughput 0.013±0.000  pogema_avg_throughput 0.104±0.002
+  3x3 N=8   popularity lie_rate 0.998±0.000  useful_report_rate 0.598±0.037  throughput 0.006±0.000  pogema_avg_throughput 0.048±0.001
+  3x3 N=8   tvc        lie_rate 0.001±0.001  useful_report_rate 0.907±0.025  throughput 0.024±0.001  pogema_avg_throughput 0.196±0.009
+calibration: B 0.6091  G 1.4333  H -0.5636  own_gain 0.1777  harm 0.0133  benefit 0.1774  lies 3.8333  believers_per_lie 2.1043
+  net private gain per lie at lam=0.0: 0.3239   phi_lo = 1.6196   lie pays without credit iff lam < 0.930 (ignoring c)
+  3x3 N=12  none       lie_rate 0.992±0.000  useful_report_rate 0.447±0.015  throughput 0.007±0.000  pogema_avg_throughput 0.080±0.002
+  3x3 N=12  popularity lie_rate 0.999±0.000  useful_report_rate 0.946±0.008  throughput 0.003±0.000  pogema_avg_throughput 0.037±0.001
+  3x3 N=12  tvc        lie_rate 0.002±0.001  useful_report_rate 0.988±0.007  throughput 0.022±0.001  pogema_avg_throughput 0.266±0.007
+calibration: B 0.0644  G 0.4667  H -0.0644  own_gain 0.0707  harm 0.0036  benefit 0.0365  lies 2.2000  believers_per_lie 3.0000
+  net private gain per lie at lam=0.0: 0.1621   phi_lo = 0.8106   lie pays without credit iff lam < 0.952 (ignoring c)
+  3x3 N=16  none       lie_rate 0.978±0.001  useful_report_rate 0.411±0.015  throughput 0.004±0.000  pogema_avg_throughput 0.066±0.003
+  3x3 N=16  popularity lie_rate 0.998±0.000  useful_report_rate 0.974±0.007  throughput 0.002±0.000  pogema_avg_throughput 0.031±0.001
+  3x3 N=16  tvc        lie_rate 0.001±0.000  useful_report_rate 0.995±0.001  throughput 0.016±0.000  pogema_avg_throughput 0.249±0.005
+calibration: B 0.0538  G 0.2667  H -0.0237  own_gain 0.0497  harm 0.0013  benefit 0.0073  lies 1.0667  believers_per_lie 5.0312
+  net private gain per lie at lam=0.0: 0.2000   phi_lo = 1.0000   lie pays without credit iff lam < 0.975 (ignoring c)
+  3x3 N=32  none       lie_rate 0.963±0.001  useful_report_rate 0.344±0.006  throughput 0.001±0.000  pogema_avg_throughput 0.040±0.001
+  3x3 N=32  popularity lie_rate 0.997±0.001  useful_report_rate 0.993±0.001  throughput 0.001±0.000  pogema_avg_throughput 0.026±0.001
+  3x3 N=32  tvc        lie_rate 0.003±0.001  useful_report_rate 0.997±0.000  throughput 0.004±0.000  pogema_avg_throughput 0.116±0.003
+calibration: B -0.0089  G 1.9000  H -0.2333  own_gain 0.1281  harm 0.0086  benefit -0.0072  lies 6.2000  believers_per_lie 2.3925
+  net private gain per lie at lam=0.0: 0.2565   phi_lo = 1.2823   lie pays without credit iff lam < 0.937 (ignoring c)
+  4x4 N=16  none       lie_rate 0.996±0.000  useful_report_rate 0.442±0.015  throughput 0.004±0.000  pogema_avg_throughput 0.065±0.002
+  4x4 N=16  popularity lie_rate 0.999±0.000  useful_report_rate 0.961±0.006  throughput 0.001±0.000  pogema_avg_throughput 0.021±0.001
+  4x4 N=16  tvc        lie_rate 0.001±0.000  useful_report_rate 0.989±0.007  throughput 0.022±0.000  pogema_avg_throughput 0.345±0.005
+calibration: B 0.0301  G 0.8667  H -0.0495  own_gain 0.0662  harm 0.0021  benefit 0.0043  lies 2.8333  believers_per_lie 4.6235
+  net private gain per lie at lam=0.0: 0.2559   phi_lo = 1.2794   lie pays without credit iff lam < 0.969 (ignoring c)

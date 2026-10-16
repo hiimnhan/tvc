@@ -1,0 +1,136 @@
+\section{Introduction}
+\label{sec:intro}
+
+In a review of FDA records for twelve antidepressants, 94\% of the trials in the
+published literature were positive, against 51\% in the FDA's own analysis, and
+the published effect sizes were 32\% larger overall \citep{turner2008selective}.
+The pattern is not confined to medicine: in a set of peer-reviewed
+social-science experiments, strong results were 60 percentage points more likely
+to be written up than null results \citep{franco2014publication}. Selection also
+acts inside a study. Comparing trial protocols with their publications, 40--62\%
+of trials had at least one primary outcome changed, introduced or omitted, and
+statistically significant outcomes were more likely to be fully reported
+\citep{dwan2008systematic}. This is publication bias and reporting bias, the
+file drawer problem of \citet{rosenthal1979file}, and it needs no fraud: small
+studies, flexible analyses and competing interests already make many published
+findings likely to be false \citep{ioannidis2005why}, and incentives that reward
+publication can select for weak methods without anyone cheating deliberately
+\citep{smaldino2016natural}. Authors respond to the credit they receive, and a
+literature that credits positive, attention-getting results teaches them to
+report only those.
+
+Behind these figures lies a problem of rewarding exploration. Agents that search
+on behalf of a group bear the cost of exploring, but what they find can save
+everyone else the same work, so a group gains only when its members explore and
+then report truthfully what they find. Models of the division of cognitive labor show that
+the reward for discovery shapes which problems a community chooses to pursue
+\citep{kitcher1990division, strevens2003priority}, and the same dependence
+appears when a planner decides what to disclose to agents whose own experiments
+create the information others rely on \citep{kremer2014wisdom}. How to reward
+such exploration is a credit assignment problem, the problem of crediting each
+agent for its own contribution to a shared return \citep{foerster2018coma}. A
+growing family of methods now rewards agents directly for their effect on others:
+social-influence rewards credit an agent for changing other agents' actions
+\citep{jaques2019social}, and learned incentive functions let agents reward one
+another to shape behavior \citep{yang2020lio}. Whenever credit flows to whoever
+is relied on, it determines not only how much a group explores but whether its
+members report what they find honestly.
+
+Theory explains why such failures persist. Conflicts of interest limit how much
+information survives strategic communication \citep{crawford1982strategic},
+receivers who take messages at face value are deceived by inflated language
+\citep{kartik2007credulity}, and a sender who controls what is revealed can
+steer a rational receiver's choice \citep{kamenica2011bayesian}. Citation counts
+can be inflated outright, as when editors pressure authors to cite their journal
+\citep{wilhite2012coercive}, and reward-maximizing learning agents with no
+built-in intent to deceive have been observed to distort their signals once
+distortion is profitable \citep{alon2023disinformation}.
+
+Intuitively, there are six common designs for the credit. However, each falls
+short.
+
+\paragraph{Credit from the shared return.}
+
+Every agent receives the group's return, the default in cooperative multi-agent
+learning, where a shared reward does not say which agent contributed to it
+\citep{foerster2018coma}. An explorer bears the full cost of exploring, while its
+own contribution to a return shared by many agents is hard to discern, so
+exploring and reporting are under-supplied. It also cannot tell a true report
+from an untruthful one, since both change the shared return only through what
+others later do with them.
+
+\paragraph{Credit for keeping exploring.}
+
+Explorers are credited for each exploration, whatever it yields. This sustains exploration, but it is blind to what is reported: a true report, an exaggerated one and silence all earn the same, so honesty has no advantage, and credit is spent on explorations whose findings never reach the group. Untruthful reports then harm the group that relies on them: they inflate apparent effects, as in
+the antidepressant trials above \citep {turner2008selective}, and they add to avoidable waste in research \citep{chalmers2009avoidable}.
+
+\paragraph{Credit for only being followed (Popularity credit).}
+
+Explorers are credited for attention, not accuracy. It encourages agents to explore
+more as they get rewarded more. A inflated claim attracts followers as readily as a real one, so exaggeration is profitable and a learner finds it. This is the same situation that celebrities may promote low-quality products without careful consideration, prioritizing their own financial gain over the well-being of consumers or reporting bias aforementioned.
+
+\paragraph{Credit for only being accurate.}
+
+Explorers are credited only for the verified gain of those who rely on a claim. This
+leaves a true report that nobody uses with nothing, which is the incentive
+behind the file drawer, and a community can stall in a state where no one
+reports because no one listens. Such credit also never checks an unused claim,
+so truth, exaggeration and silence all earn the same. Accuracy-based remedies
+from the literature do not close this gap: peer prediction makes honesty an
+equilibrium rather than a dominant strategy \citep{miller2005peer}, and proper
+scoring rules require the outcome to be observed \citep{gneiting2007strictly}.
+
+\paragraph{A cost for lying alone.}
+
+A fine charged when an audit finds a report false \citep{becker1968crime}. It
+helps reduce lying rate of the agents. Nevertheless, it is not enough either: a
+lie that is followed still collects the followers' credit, so the fine has to
+outbid it, and a true report that nobody follows still earns nothing, so truth
+is no better than silence. Moreover, a lie can be profitable outside the credit channel,
+as when a hyped claim attracts followers whose attention benefits the claimant,
+so the penalty must outweigh a temptation the designer does not control. With
+smooth lying costs, \citep{kartik2009StrategicCommunicationLying} shows that
+truthful reporting is never an equilibrium, and that inflation shrinks with cost
+intensity but persists.
+
+\paragraph{Reputation without credit.}
+
+Receivers stop following senders who were wrong before, and give nothing. This
+learns only from claims that were checked, and a claim that nobody follows is
+never checked, so unused lies leave a sender's reputation untouched. It also
+gives an honest explorer no reason to report: a new sender starts without trust
+and may not be followed, so a true report can go unused and earn nothing.
+
+These failures set our goal. We ask for a credit rule under which reporting the
+truth is each agent's best action whatever the others do with the report,
+including when a lie or a withheld result carries a private gain the designer
+neither funds nor observes. Because receivers in learning systems, like
+readers of a literature, keep changing how they respond, the guarantee cannot
+rest on an equilibrium or on a model of receiver behavior; it must hold for
+every receiver rule, so truth must beat the response most favorable to a lie.
+
+Our key idea is to reward only verified value and to make every claim face a
+check. We propose Truthful Verified Credit (\tvc{}), which wraps any host credit
+scheme with three parts, each rewarding truth at least as much as a lie in every
+case. Verified gain credit rewards the realized improvement of those who rely on a
+report, capped, and only when the report passes verification. A checked score
+bonus rewards every report that is checked, whether by a follower or by an
+independent random audit, so a true report, including a negative one, earns
+credit even when nobody acts on it. An audit fine is charged when an audit finds
+a report false, and we derive the fine needed to outweigh a lie's outside gain.
+
+We study \tvc{} in two settings. In a multi-agent bandit, where agents search
+arms of unknown value on behalf of a group, popularity credit drives over
+90\% of reports to be exaggerated, while \tvc{} brings it below one percent at
+comparable welfare. In a congestion setting built on a multi-agent pathfinding (MAPF)
+benchmark \citep{skrynnik2025pogema}, robots can post fake jams to clear their
+own routes: self-interested learners lie at 91--99\% of opportunities without
+credit, \tvc{} holds the rate near 0.2\%, and throughput rises about threefold.
+
+% We summarize our contributions as follows.
+% \begin{itemize}
+%   \item We formalize collective exploration with reliance-based credit and show that rewarding attention breeds hype and silence; when information drives congestion, hype becomes a social dilemma in which every agent hyping lowers group output by 65\% (\cref{sec:problem,sec:experiments}).
+%   \item We propose \tvc{}, show that truth earns more than any lie for every receiver rule, and show by ablation that each of its parts is needed (\cref{sec:why,sec:experiments}).
+%   \item We derive the audit fine required when lies carry outside gains and confirm the predicted threshold empirically (\cref{eq:fine,sec:experiments}).
+%   \item We evaluate \tvc{} in a multi-agent bandit and in multi-agent pathfinding, and report its limits: \tvc{} elicits truth rather than usefulness, so its unconditional bonus can encourage reports that carry no value, and it raises welfare only where honest information changes what others do (\cref{sec:experiments,sec:conclusion}).
+% \end{itemize}

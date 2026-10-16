@@ -1,0 +1,9 @@
+   Building tvc @ file:///Users/nhanncv/personal/research/tvc
+      Built tvc @ file:///Users/nhanncv/personal/research/tvc
+Uninstalled 1 package in 1ms
+Installed 1 package in 3ms
+calibration: B 0.1061  G 1.7333  H -0.5667  own_gain 0.1683  harm 0.0126  benefit 0.0884  lies 4.4000  believers_per_lie 2.3409
+  net private gain per lie at lam=0.0: 0.3439   phi_lo = 1.7197   lie pays without credit iff lam < 0.930 (ignoring c)
+  none, lam 0.917                  lie_rate 0.065±0.001  useful_report_rate 0.851±0.009  throughput 0.021±0.000  spend 0.000±0.000
+  tvc, lam 0.917                   lie_rate 0.001±0.000  useful_report_rate 0.991±0.005  throughput 0.023±0.001  spend 0.041±0.001
+-> /Users/nhanncv/personal/research/tvc/logs/fake_jams_shared.md

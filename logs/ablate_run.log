@@ -1,0 +1,13 @@
+calibration: B 0.6091  G 1.4333  H -0.5636  own_gain 0.1777  harm 0.0133  benefit 0.1774  lies 3.8333  believers_per_lie 2.1043
+  net private gain per lie at lam=0.0: 0.3239   phi_lo = 1.6196   lie pays without credit iff lam < 0.930 (ignoring c)
+  none                             lie_rate 0.992±0.000  useful_report_rate 0.447±0.015  throughput 0.007±0.000  spend 0.000±0.000
+  popularity                       lie_rate 0.999±0.000  useful_report_rate 0.946±0.008  throughput 0.003±0.000  spend 0.220±0.000
+  accuracy                         lie_rate 0.001±0.000  useful_report_rate 0.012±0.006  throughput 0.005±0.000  spend 0.000±0.000
+  TVC (fine 15, default)           lie_rate 0.002±0.001  useful_report_rate 0.988±0.007  throughput 0.022±0.001  spend 0.040±0.002
+  TVC fine 8                       lie_rate 0.002±0.001  useful_report_rate 0.982±0.011  throughput 0.022±0.000  spend 0.041±0.001
+  TVC no bonus (eta 0)             lie_rate 0.001±0.000  useful_report_rate 0.962±0.013  throughput 0.022±0.001  spend 0.011±0.000
+  TVC no audit (p 0)               lie_rate 0.993±0.000  useful_report_rate 0.967±0.009  throughput 0.007±0.000  spend 0.021±0.001
+  TVC no fine (fine 0)             lie_rate 0.993±0.000  useful_report_rate 0.966±0.009  throughput 0.007±0.000  spend 0.021±0.001
+  TVC no gate (tau 1e6)            lie_rate 0.002±0.001  useful_report_rate 0.988±0.007  throughput 0.022±0.001  spend 0.040±0.002
+  TVC no cap (budget 1e6)          lie_rate 0.002±0.001  useful_report_rate 0.988±0.007  throughput 0.022±0.001  spend 0.040±0.002
+-> /Users/nhanncv/personal/research/tvc/logs/fake_jams_ablate.md

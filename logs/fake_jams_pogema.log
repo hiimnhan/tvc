@@ -1,0 +1,21 @@
+calibration: B 0.1061  G 1.7333  H -0.5667  own_gain 0.1683  harm 0.0126  benefit 0.0884  lies 4.4000  believers_per_lie 2.3409
+  net private gain per lie at lam=0.0: 0.3439   phi_lo = 1.7197   lie pays without credit iff lam < 0.930 (ignoring c)
+
+### POGEMA task: restart (lam = 0, 3 seeds, 150 episodes, last-50 mean ± sd over seeds)
+
+| rule | lie_rate | useful_report_rate | avg_throughput |
+| --- | --- | --- | --- |
+| none | 0.992 ± 0.001 | 0.444 ± 0.027 | 0.085 ± 0.003 |
+| popularity | 0.999 ± 0.000 | 0.942 ± 0.005 | 0.042 ± 0.000 |
+| avc | 0.002 ± 0.001 | 0.994 ± 0.001 | 0.282 ± 0.005 |
+calibration: B -0.0121  G 0.2333  H -0.0273  own_gain 0.0933  harm 0.0044  benefit -0.0519  lies 1.4667  believers_per_lie 1.7045
+  net private gain per lie at lam=0.0: 0.1091   phi_lo = 0.5455   lie pays without credit iff lam < 0.954 (ignoring c)
+
+### POGEMA task: finish (lam = 0, 3 seeds, 150 episodes, last-50 mean ± sd over seeds)
+
+| rule | lie_rate | useful_report_rate | CSR | ISR | SoC | ep_length | makespan |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| none | 0.902 ± 0.001 | 0.263 ± 0.049 | 0.867 ± 0.077 | 0.968 ± 0.016 | 1774.347 ± 121.735 | 71.184 ± 3.856 | 147.867 ± 10.145 |
+| popularity | 0.996 ± 0.001 | 0.658 ± 0.017 | 0.480 ± 0.028 | 0.846 ± 0.010 | 2746.493 ± 26.147 | 137.157 ± 0.679 | 228.880 ± 2.174 |
+| avc | 0.007 ± 0.001 | 0.559 ± 0.042 | 0.367 ± 0.057 | 0.803 ± 0.004 | 2128.567 ± 164.485 | 64.821 ± 1.505 | 177.387 ± 13.707 |
+-> logs/fake_jams_pogema.md

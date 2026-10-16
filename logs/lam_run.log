@@ -1,0 +1,18 @@
+calibration: B 0.6091  G 1.4333  H -0.5636  own_gain 0.1777  harm 0.0133  benefit 0.1774  lies 3.8333  believers_per_lie 2.1043
+  net private gain per lie at lam=0.3: 0.2033   phi_lo = 1.0166   lie pays without credit iff lam < 0.930 (ignoring c)
+  none       0.0    lie_rate 0.992±0.000  useful_report_rate 0.447±0.015  throughput 0.007±0.000  spend 0.000±0.000
+  none       0.25   lie_rate 0.989±0.001  useful_report_rate 0.564±0.015  throughput 0.007±0.000  spend 0.000±0.000
+  none       0.5    lie_rate 0.981±0.001  useful_report_rate 0.664±0.015  throughput 0.007±0.000  spend 0.000±0.000
+  none       0.75   lie_rate 0.919±0.001  useful_report_rate 0.752±0.017  throughput 0.007±0.000  spend 0.000±0.000
+  none       1.0    lie_rate 0.025±0.001  useful_report_rate 0.925±0.012  throughput 0.021±0.001  spend 0.000±0.000
+  popularity 0.0    lie_rate 0.999±0.000  useful_report_rate 0.946±0.008  throughput 0.003±0.000  spend 0.220±0.000
+  popularity 0.25   lie_rate 0.999±0.000  useful_report_rate 0.936±0.012  throughput 0.003±0.000  spend 0.220±0.001
+  popularity 0.5    lie_rate 0.998±0.000  useful_report_rate 0.934±0.016  throughput 0.003±0.000  spend 0.220±0.001
+  popularity 0.75   lie_rate 0.999±0.000  useful_report_rate 0.949±0.010  throughput 0.003±0.000  spend 0.220±0.001
+  popularity 1.0    lie_rate 0.998±0.000  useful_report_rate 0.931±0.016  throughput 0.003±0.000  spend 0.219±0.001
+  tvc        0.0    lie_rate 0.002±0.001  useful_report_rate 0.988±0.007  throughput 0.022±0.001  spend 0.040±0.002
+  tvc        0.25   lie_rate 0.001±0.000  useful_report_rate 0.985±0.008  throughput 0.022±0.001  spend 0.040±0.001
+  tvc        0.5    lie_rate 0.001±0.000  useful_report_rate 0.988±0.006  throughput 0.022±0.001  spend 0.039±0.001
+  tvc        0.75   lie_rate 0.001±0.000  useful_report_rate 0.988±0.007  throughput 0.023±0.000  spend 0.041±0.001
+  tvc        1.0    lie_rate 0.001±0.000  useful_report_rate 0.992±0.005  throughput 0.022±0.001  spend 0.040±0.001
+-> /Users/nhanncv/personal/research/tvc/logs/fake_jams_lam.md

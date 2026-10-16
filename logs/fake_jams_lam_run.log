@@ -1,0 +1,18 @@
+calibration: B 0.1061  G 1.7333  H -0.5667  own_gain 0.1683  harm 0.0126  benefit 0.0884  lies 4.4000  believers_per_lie 2.3409
+  net private gain per lie at lam=0.3: 0.2169   phi_lo = 1.0846   lie pays without credit iff lam < 0.930 (ignoring c)
+  none       0.0    lie_rate 0.992±0.001  useful_report_rate 0.428±0.024  throughput 0.007±0.000  spend 0.000±0.000
+  none       0.25   lie_rate 0.989±0.001  useful_report_rate 0.498±0.017  throughput 0.007±0.000  spend 0.000±0.000
+  none       0.5    lie_rate 0.980±0.001  useful_report_rate 0.578±0.020  throughput 0.007±0.000  spend 0.000±0.000
+  none       0.75   lie_rate 0.907±0.002  useful_report_rate 0.651±0.017  throughput 0.008±0.000  spend 0.000±0.000
+  none       1.0    lie_rate 0.026±0.001  useful_report_rate 0.867±0.009  throughput 0.022±0.000  spend 0.000±0.000
+  popularity 0.0    lie_rate 0.999±0.000  useful_report_rate 0.946±0.012  throughput 0.003±0.000  spend 0.218±0.001
+  popularity 0.25   lie_rate 0.998±0.000  useful_report_rate 0.955±0.015  throughput 0.004±0.000  spend 0.218±0.001
+  popularity 0.5    lie_rate 0.998±0.000  useful_report_rate 0.958±0.010  throughput 0.003±0.000  spend 0.219±0.001
+  popularity 0.75   lie_rate 0.998±0.000  useful_report_rate 0.959±0.011  throughput 0.003±0.000  spend 0.218±0.001
+  popularity 1.0    lie_rate 0.998±0.000  useful_report_rate 0.960±0.010  throughput 0.003±0.000  spend 0.218±0.001
+  avc        0.0    lie_rate 0.001±0.001  useful_report_rate 0.989±0.007  throughput 0.023±0.001  spend 0.041±0.001
+  avc        0.25   lie_rate 0.001±0.000  useful_report_rate 0.991±0.005  throughput 0.023±0.001  spend 0.042±0.001
+  avc        0.5    lie_rate 0.001±0.000  useful_report_rate 0.989±0.007  throughput 0.022±0.001  spend 0.041±0.002
+  avc        0.75   lie_rate 0.001±0.000  useful_report_rate 0.985±0.010  throughput 0.023±0.000  spend 0.042±0.001
+  avc        1.0    lie_rate 0.001±0.000  useful_report_rate 0.981±0.009  throughput 0.022±0.001  spend 0.042±0.001
+-> /Users/nhanncv/personal/research/credit-hype-honest-exploration/logs/fake_jams_lam.md

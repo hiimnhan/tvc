@@ -1,0 +1,18 @@
+% POGEMA lifelong MAPF, lambda = 0, 10 seeds (source: logs/fake_jams_pogema.md).
+% ICML: table captions go ABOVE the table.
+\begin{table}[t]
+  \caption{POGEMA lifelong MAPF ($\lambda=0$, 10 seeds, mean $\pm$ 95\% CI). Lie rate is the percentage of opportunities on which a robot posts a fake jam on its own route, useful is the percentage of real jams elsewhere that it reports, and throughput is POGEMA's \texttt{avg\_throughput}, the deliveries per step summed over the 12 robots.}
+  \label{tab:pogema}
+  \centering
+  \small
+  \setlength{\tabcolsep}{3pt}
+  \begin{tabular}{lccc}
+    \toprule
+    Rule & Lie rate (\%)  & Useful (\%)  & Throughput  \\
+    \midrule
+    None       & $99.2 \pm 0.0$ & $44.7 \pm 1.5$ & $0.080 \pm 0.002$ \\
+    Popularity & $99.9 \pm 0.0$ & $94.6 \pm 0.8$ & $0.037 \pm 0.001$ \\
+    \textbf{TVC} & $\mathbf{0.2 \pm 0.1}$ & $\mathbf{98.8 \pm 0.7}$ & $\mathbf{0.266 \pm 0.007}$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}

@@ -1,0 +1,82 @@
+\section{Problem Setting}
+\label{sec:problem}
+We consider a multi-agent bandit game with private payoff. 
+% We choose this game setting as it is the simple game where exploration is costly and private, a finding helps others, and receivers cannot check a claim before acting on it. It also has a ground truth the designer can audit, so lying, silence and reliance credit can all be measured and the payoffs stay simple enough to prove truth dominates.
+There are $N$ agents and $K$ arms. Arm $k$ has a value $v_k>0$, drawn i.i.d.\ from a distribution $F$ with finite mean and fixed within an episode. The mean value is $\vbar=\frac1K\sum_k v_k$, and all credit amounts below are in units of $\vbar$. Play lasts $T$ rounds. Agent $i$ holds a set of known arms $\mathcal K_i^t\subseteq\{1,\dots,K\}$ with current best value $b_i^t=\max_{k\in\mathcal K_i^t}v_k$.
+
+In each round, a free agent $i$ chooses through its policy $\pi_i$ to \emph{explore}, pulling an unknown arm and adding it to $\mathcal K_i$, or to \emph{exploit}, pulling its best known arm. Exploring costs $c\ge0$. Agent $i$ observes the payoff of its own pulls only, and its payoff $u_i^t$ is the value of the pulled arm, minus $c$ when exploring. On discovering arm $k$ in round $t$, agent $i$ observes $y_i^t=v_k e^{\epsilon_i^t}$ with $\epsilon_i^t\sim\mathcal N(0,\sigma^2)$, drawn i.i.d., is the observation noise: a random error that the explorer picks up when it discovers an arm. We write $\theta_i^t=v_k$ for the true value behind this observation. Pulling an arm yields its true value; only the discovery observation is noisy.
+
+After discovering an arm, agent $i$ may post a public claim $m_i^t\in\{\varnothing\}\cup\mathbb R_{>0}$, where $\varnothing$ is silence. Posting a claim cost $\xi\ge0$. The claim is \emph{truthful} if $m_i^t=y_i^t$. We denote $\kappa_i^t=m_i^t/y_i^t$ is inflation rate. Each free agent $j$ that did not explore then chooses whom to follow, $d_j^t=\rho_j(h_j^t,m^t)\in\{0\}\cup\{1,\dots,N\}\setminus\{j\}$, where $0$ means nobody, $h_j^t$ is $j$'s private history and $m^t=(m_1^t,\dots,m_N^t)$. Following $i$ commits $j$ to $i$'s arm for $L$ rounds. The \emph{receiver rule} $\rho_j$ is an arbitrary function: it may be a fixed heuristic, a Bayesian update, a learning policy or an adversary. We assume no rationality and no equilibrium among receivers. The follower's gain over its own best is
+\begin{equation}
+  g_{ji}^t=L\,\big(\theta_i^t-b_j^t\big)^{+}.
+  \label{eq:gain}
+\end{equation}
+
+A receiver cannot check a claim before it acts on it; it learns $\theta_i^t$ exactly only by following. 
+
+\paragraph{Reward.}
+A sender maximises a mixed-motive reward in which it weighs the others' mean payoff $\bar u_{-i}^t$ by the \emph{prosocial weight} $\lambda\in[0,1]$, where $\lambda=0$ is a selfish sender and $\lambda=1$ a fully cooperative one,
+\begin{equation}
+  r_i^t=(1-\lambda)\,u_i^t+\lambda\,\bar u_{-i}^t-\xi\,\mathbb 1[m_i^t\neq\varnothing]+C_i^t,
+  \label{eq:reward}
+\end{equation}
+where $\bar u_{-i}^t=\frac1{N-1}\sum_{j\neq i}u_j^t$ is the mean payoff of the other agents.
+
+\paragraph{Outside gain.}
+A claim can also change the sender's reward outside the credit, because believers act on it. Relative to a truthful claim, a lie raises the liar's own payoff $u_i^t$ by $G_1\ge0$, for example the citations a researcher gains, and lowers the others' mean payoff $\bar u_{-i}^t$ by $D_1\ge0$, for example the time they waste on a misleading approach, both per lie and in units of $\vbar$. Formally, $G_1=\mathbb E[u_i^t\mid\text{lie}]-\mathbb E[u_i^t\mid\text{truthful claim}]$ and $D_1=\mathbb E[\bar u_{-i}^t\mid\text{truthful claim}]-\mathbb E[\bar u_{-i}^t\mid\text{lie}]$, where the expectation is over how the receivers respond. A sender's payoff changes with a claim only through what others do, so $G_1>0$ needs a setting in which others' actions affect it. We take the largest values over receiver rules. The sender feels a share $1-\lambda$ of its gain and a share $\lambda$ of the damage, so a lie changes the part of its reward that does not come from the credit by the \emph{outside gain}
+\begin{equation}
+  \Gamma=(1-\lambda)G_1-\lambda D_1 .
+  \label{eq:gamma}
+\end{equation}
+The designer neither observes nor provides $\Gamma$, and we assume $\Gamma\ge0$. The posting cost $\xi$ is borne by truth and lie alike, so it does not enter $\Gamma$; it matters only when a claim is compared with silence.
+
+% ---------------------------------------------------------------------------------------------------
+% \subsection{Credit for being relied on}
+% \label{sec:credit}
+
+% A \emph{host} credit scheme gives sender $i$ an amount $H_i^t$ that grows with reliance on $i$, and an agent maximizes its return under $r_i^t$ in \cref{eq:reward}. Two basic schemes are
+% \begin{align}
+%   H_i^t&=\beta\,\big|\{j:d_j^t=i\}\big| &&\text{(popularity)},\\
+%   H_i^t&=\gamma\textstyle\sum_{j:\,d_j^t=i}L\,(\theta_i^t-b_j^t) &&\text{(accuracy)},
+% \end{align}
+% and social-influence rewards \citep{jaques2019social} and learned incentives \citep{yang2020lio} act like the first. All of them give credit only through reliance: $H_i^t=0$ whenever no one follows $i$.
+
+% % ---------------------------------------------------------------------------------------------------
+% \subsection{Why reliance credit fails}
+% \label{sec:failure}
+
+% Call a receiver profile \emph{monotone} if raising $m_i^t$ never makes a receiver stop following $i$, which holds for naive, calibrated and most learned rules.
+
+% \paragraph{Hype.}
+% Under popularity credit and a monotone profile, any inflation $m'>y_i^t$ weakly raises $H_i^t$, and strictly so whenever some receiver's threshold lies in $(y_i^t,m']$. Truth is then not a best response as soon as the added followers are worth more than the cost of the claim. Popularity rewards a fake claim and a real one alike, because both attract followers, so a learner finds inflation.
+
+% \paragraph{Silence.}
+% Because $H_i^t=0$ for an unfollowed claim, a true claim that nobody follows (for example $\theta_i^t\le b_j^t$ for all $j$, so there is nothing to gain) earns $0-c$, while silence earns $0$. Silence is strictly better whenever $c>0$, and equal otherwise, so a community can stall where no one reports because no one listens. Accuracy credit has this flaw as well, and a second one: an unfollowed claim is never checked, so truth, any lie and silence all earn the same. It is truthful only weakly.
+
+% \paragraph{Outside gain.}
+% If $\Gamma>0$, a lie is profitable with no credit at all. Any credit rule that rewards only verified value must also overcome $\Gamma$, and the amount it needs depends on a quantity the designer does not control.
+
+% \paragraph{Social dilemma.}
+% When information drives congestion, $\Gamma>0$ makes lying individually dominant, yet the harm $D_1$ it causes lowers the group's welfare $W=\frac1{\vbar}\sum_{i,t}u_i^t$. Lying then fits a social dilemma: every agent gains by it, but all lying leaves the group worse off than all honest.
+
+% % ---------------------------------------------------------------------------------------------------
+% \subsection{Design goal}
+% \label{sec:goal}
+
+% We want a credit $C_i^t$ that replaces $H_i^t$ in \cref{eq:reward}. Let $R_i(m)$ be sender $i$'s expected reward for claim $m$, given its observation $y_i^t$, taken over the audit draws only.
+
+% \begin{definition}[Receiver-robust truthfulness]
+%   \label{def:rrt}
+%   Truthful reporting is \emph{receiver-robustly dominant} if there is a margin $\Delta>0$ such that, for every receiver profile $(\rho_j)_j$, every history and every claim $m\ne y_i^t$ (silence included), $R_i(y_i^t)-R_i(m)\ge\Delta\vbar$.
+% \end{definition}
+
+% The definition has three consequences. First, it is a dominance property: it holds against every receiver rule, so it needs no model of how receivers respond and survives their learning. Second, $R_i$ includes the outside gain $\Gamma$, so the margin holds against a lie that gains outside the credit channel. Third, the margin $\Delta$ is explicit, so it can be used to size the audit fine.
+
+% We pursue this goal under four assumptions on the channel.
+% \begin{enumerate}
+%   \item \emph{Separability.} Given the receivers' actions, $u_i^t$ does not depend on $m_i^t$. Claims affect $i$ only through $C_i^t$ and through the receivers' behaviour.
+%   \item \emph{Unforgeable verification.} A checked claim reveals $\theta_i^t$ exactly, and followers cannot misreport it.
+%   \item \emph{Independent audits.} $a_i^t$ is independent of the claims, the receivers' choices and the history.
+%   \item \emph{Lie separation.} A truthful claim is verified, and every other claim fails the tolerance $\tau$.
+% \end{enumerate}
+% We do not assume limited liability: the credit may be negative. We also ask for a bounded cost, $\E\big[\sum_{i,t}(C_i^t)^{+}\big]\le\mathcal B$ for a budget $\mathcal B$, and no loss of welfare $W$ when all agents report truthfully. The next section gives a credit that meets \cref{def:rrt} under these assumptions.

@@ -1,0 +1,27 @@
+calibration: B 0.1061  G 1.7333  H -0.5667  own_gain 0.1683  harm 0.0126  benefit 0.0884  lies 4.4000  believers_per_lie 2.3409
+  net private gain per lie at lam=0.3: 0.2169   phi_lo = 1.0846   lie pays without credit iff lam < 0.930 (ignoring c)
+  none       0.0    lie_rate 0.992  useful_report_rate 0.444  throughput 0.007  spend 0.000
+  none       0.25   lie_rate 0.989  useful_report_rate 0.486  throughput 0.007  spend 0.000
+  none       0.5    lie_rate 0.981  useful_report_rate 0.569  throughput 0.007  spend 0.000
+  none       0.75   lie_rate 0.907  useful_report_rate 0.660  throughput 0.008  spend 0.000
+  none       1.0    lie_rate 0.026  useful_report_rate 0.876  throughput 0.022  spend 0.000
+  popularity 0.0    lie_rate 0.999  useful_report_rate 0.942  throughput 0.003  spend 0.218
+  popularity 0.25   lie_rate 0.999  useful_report_rate 0.969  throughput 0.003  spend 0.218
+  popularity 0.5    lie_rate 0.999  useful_report_rate 0.960  throughput 0.003  spend 0.219
+  popularity 0.75   lie_rate 0.999  useful_report_rate 0.966  throughput 0.003  spend 0.218
+  popularity 1.0    lie_rate 0.999  useful_report_rate 0.966  throughput 0.003  spend 0.218
+  avc        0.0    lie_rate 0.002  useful_report_rate 0.994  throughput 0.023  spend 0.042
+  avc        0.25   lie_rate 0.001  useful_report_rate 0.994  throughput 0.023  spend 0.042
+  avc        0.5    lie_rate 0.002  useful_report_rate 0.995  throughput 0.022  spend 0.042
+  avc        0.75   lie_rate 0.001  useful_report_rate 0.993  throughput 0.023  spend 0.041
+  avc        1.0    lie_rate 0.001  useful_report_rate 0.969  throughput 0.022  spend 0.040
+calibration: B 0.1061  G 1.7333  H -0.5667  own_gain 0.1683  harm 0.0126  benefit 0.0884  lies 4.4000  believers_per_lie 2.3409
+  net private gain per lie at lam=0.0: 0.3439   phi_lo = 1.7197   lie pays without credit iff lam < 0.930 (ignoring c)
+fine sweep around phi_lo = 1.7655
+  avc        0.0    lie_rate 0.992  useful_report_rate 0.979  throughput 0.007  spend 0.026
+  avc        0.4414 lie_rate 0.990  useful_report_rate 0.986  throughput 0.007  spend 0.022
+  avc        0.8828 lie_rate 0.985  useful_report_rate 0.978  throughput 0.008  spend 0.016
+  avc        1.7655 lie_rate 0.859  useful_report_rate 0.985  throughput 0.008  spend 0.012
+  avc        3.531  lie_rate 0.030  useful_report_rate 0.979  throughput 0.022  spend 0.040
+  avc        7.062  lie_rate 0.004  useful_report_rate 0.987  throughput 0.022  spend 0.040
+  avc        14.124 lie_rate 0.001  useful_report_rate 0.993  throughput 0.023  spend 0.041

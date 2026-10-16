@@ -1,0 +1,13 @@
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Credit among learning agents.}
+Credit assignment in cooperative multi-agent reinforcement learning asks how to credit each agent for its share of a shared return. Payoff design gives each agent a payoff that serves the group objective \citep{wolpert2001optimal}, counterfactual baselines estimate an agent's marginal contribution \citep{foerster2018coma}, and value decomposition splits a team value into per-agent values \citep{sunehag2018value,rashid2018qmix}. These methods assume cooperative agents who report honestly. With mixed motives, as in sequential social dilemmas \citep{leibo2017multi}, shaping the reward changes behavior: inequity aversion promotes cooperation \citep{hughes2018inequity}, social-influence rewards credit an agent for changing others' actions \citep{jaques2019social}, and gifting or learned incentives let agents reward one another \citep{lupu2020gifting,yang2020lio}. These incentives reward being relied on, not being right, so an agent can raise its credit by exaggerating. This is an instance of reward hacking, where optimizing a proxy reward degrades the true objective \citep{amodei2016concrete,skalse2022defining}. \tvc{} is a rule for what to reward, and it can replace that credit.
+
+\paragraph{Strategic communication.}
+Conflicts of interest limit what cheap talk can convey \citep{crawford1982strategic}. Receivers who take messages at face value are deceived by inflated language \citep{kartik2007credulity}, a sender who controls what is revealed can steer a rational receiver \citep{kamenica2011bayesian}, and with a smooth cost of lying, inflation falls but persists \citep{kartik2009StrategicCommunicationLying}. Learning agents with no intent to deceive distort their signals once distortion is profitable \citep{alon2023disinformation}. These works analyze equilibria against a model of the receiver. We ask for dominance against every receiver rule.
+
+\paragraph{Truthful elicitation and verification.}
+Proper scoring rules need the outcome to be observed \citep{gneiting2007strictly}, and peer prediction \citep{miller2005peer,shnayder2016informed,feng2022peer,gao2019incentivizing} makes honesty an equilibrium and not a dominant strategy. With costly verification, the optimal mechanism checks only some reports, and a cost of lying lowers how often \citep{benporath2014OptimalAllocationCostly}, in line with deterrence by probabilistic enforcement \citep{becker1968crime}. \tvc{} audits a random sample, which makes truth dominant, and its follower gain is a VCG-style externality payment \citep{vickrey1961counterspeculation,clarke1971multipart,groves1973incentives} adapted to receivers who act by their own rule.
+
+

@@ -1,0 +1,9 @@
+calibration: B 0.1061  G 0.5333  H -0.2667  own_gain 0.0920  harm -0.0003  benefit 0.0909  lies 3.3667  believers_per_lie 1.7228
+  net private gain per lie at lam=0.0: 0.1084   phi_lo = 0.5421   lie pays without credit iff lam < 1.003 (ignoring c)
+  none, lam 0                      lie_rate 0.539±0.014  useful_report_rate 0.408±0.016  throughput 0.011±0.001  spend 0.000±0.000
+  popularity, lam 0                lie_rate 0.983±0.001  useful_report_rate 0.942±0.010  throughput 0.013±0.001  spend 0.036±0.004
+  tvc, lam 0                       lie_rate 0.001±0.000  useful_report_rate 0.987±0.011  throughput 0.022±0.001  spend 0.041±0.002
+  none, lam 0.5                    lie_rate 0.329±0.009  useful_report_rate 0.498±0.018  throughput 0.013±0.001  spend 0.000±0.000
+  popularity, lam 0.5              lie_rate 0.982±0.002  useful_report_rate 0.944±0.009  throughput 0.013±0.001  spend 0.035±0.003
+  tvc, lam 0.5                     lie_rate 0.001±0.000  useful_report_rate 0.988±0.007  throughput 0.022±0.000  spend 0.040±0.002
+-> /Users/nhanncv/personal/research/credit-hype-honest-exploration/logs/fake_jams_sceptical.md
