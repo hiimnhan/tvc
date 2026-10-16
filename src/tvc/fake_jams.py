@@ -1,4 +1,3 @@
-from concurrent.futures import ProcessPoolExecutor
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 from types import SimpleNamespace
@@ -16,7 +15,7 @@ from tvc.pogema_env import (
     route_doorways,
     summarize,
 )
-from tvc.util import bfs_dist, chebyshev_dist, ci95
+from tvc.util import ProgressPool, bfs_dist, chebyshev_dist, ci95
 
 RULES = ("none", "popularity", "accuracy", "fine", "pop_fine", "tvc")
 
@@ -497,7 +496,7 @@ def measure_B_G_H(cfg, episodes=50) -> dict[str, float]:
     benefit = B / believers(reporter). Also lies per episode and believers per lie."""
     cfg = replace(cfg, rule="none")
     jobs = [(cfg, name, e) for name in HAND_SET for e in range(episodes)]
-    with ProcessPoolExecutor() as pool:
+    with ProgressPool() as pool:
         runs = list(pool.map(_hand_set_episode, jobs))
     m = {}
     for k, name in enumerate(HAND_SET):
@@ -628,7 +627,7 @@ def hype_sweep(
         for b in range(seeds)
         for e in range(episodes)
     ]
-    with ProcessPoolExecutor() as pool:
+    with ProgressPool() as pool:
         res = list(pool.map(_hype_episode, jobs, chunksize=4))
     per_k = episodes * seeds
     rows, lines = (
@@ -682,7 +681,7 @@ def sweep(
         for v in values
         for s in range(seeds)
     ]
-    with ProcessPoolExecutor() as pool:
+    with ProgressPool() as pool:
         results = iter(pool.map(_train_summary, cfgs))
     out = {rule: [] for rule in rules}
     for rule in rules:
@@ -726,7 +725,7 @@ def run_variants(
         for n in names
         for s in range(seeds)
     ]
-    with ProcessPoolExecutor() as pool:
+    with ProgressPool() as pool:
         res = list(pool.map(_train_summary, cfgs))
     lines = [
         f"### {title}\n",
@@ -815,7 +814,7 @@ if __name__ == "__main__":
                 for r in rules
                 for s in range(seeds)
             ]
-            with ProcessPoolExecutor() as pool:
+            with ProgressPool() as pool:
                 res = list(pool.map(_train_all_metrics, cfgs))
             for k_r, r in enumerate(rules):
                 runs = res[k_r * seeds : (k_r + 1) * seeds]
@@ -869,7 +868,7 @@ if __name__ == "__main__":
                 for r in rules
                 for s in range(seeds)
             ]
-            with ProcessPoolExecutor() as pool:
+            with ProgressPool() as pool:
                 res = list(pool.map(_train_all_metrics, cfgs))
             keys = ["lie_rate", "useful_report_rate"] + sorted(
                 k for k in res[0] if k.startswith("pogema_")
@@ -1145,7 +1144,7 @@ if __name__ == "__main__":
             for p in ps
             for s in range(seeds)
         ]
-        with ProcessPoolExecutor() as pool:
+        with ProgressPool() as pool:
             res = list(pool.map(_train_all_metrics, cfgs))
         rows, lines = (
             {},

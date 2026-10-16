@@ -1,6 +1,8 @@
 """Generic helpers: grid distances."""
 
+import time
 from collections import deque
+from concurrent.futures import ProcessPoolExecutor
 
 import numpy as np
 
@@ -49,3 +51,26 @@ def ci95(xs) -> tuple[float, float]:
     df = len(xs) - 1
     t = _T95[max(k for k in _T95 if k <= df)] if df <= 30 else 1.96
     return float(xs.mean()), float(t * xs.std(ddof=1) / np.sqrt(len(xs)))
+
+
+class ProgressPool(ProcessPoolExecutor):
+    """ProcessPoolExecutor whose map() prints a progress line each time a run finishes: done/total, elapsed, ETA.
+    Same use as before (`with ProgressPool() as pool: list(pool.map(fn, items))`), so a long sweep shows it is alive."""
+
+    def map(self, fn, *iterables, **kwargs):
+        args = list(zip(*iterables))
+        futures = [self.submit(fn, *a) for a in args]
+        start, done = time.time(), [0]
+
+        def report(_):
+            done[0] += 1
+            spent = time.time() - start
+            left = spent / done[0] * (len(futures) - done[0])
+            print(
+                f"  [{fn.__name__}] {done[0]}/{len(futures)} runs done, {spent / 60:.1f} min elapsed, ~{left / 60:.1f} min left",
+                flush=True,
+            )
+
+        for f in futures:
+            f.add_done_callback(report)
+        return (f.result() for f in futures)

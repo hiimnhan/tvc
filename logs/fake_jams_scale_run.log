@@ -25,3 +25,5 @@ calibration: B -0.0089  G 1.9000  H -0.2333  own_gain 0.1281  harm 0.0086  benef
   4x4 N=16  tvc        lie_rate 0.001±0.000  useful_report_rate 0.989±0.007  throughput 0.022±0.000  pogema_avg_throughput 0.345±0.005
 calibration: B 0.0301  G 0.8667  H -0.0495  own_gain 0.0662  harm 0.0021  benefit 0.0043  lies 2.8333  believers_per_lie 4.6235
   net private gain per lie at lam=0.0: 0.2559   phi_lo = 1.2794   lie pays without credit iff lam < 0.969 (ignoring c)
+/Users/nhanncv/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 5 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

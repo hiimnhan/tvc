@@ -5,11 +5,10 @@ Writes logs/fake_jams_learners.md.
 """
 
 import sys
-from concurrent.futures import ProcessPoolExecutor
 from dataclasses import replace
 
 from tvc.fake_jams import LOGS, RULES, Config, _train_all_metrics, calibrate
-from tvc.util import ci95
+from tvc.util import ProgressPool, ci95
 
 LEARNERS = ("reinforce", "dqn", "ppo")
 KEYS = ("lie_rate", "useful_report_rate", "pogema_avg_throughput", "spend")
@@ -26,7 +25,7 @@ if __name__ == "__main__":
         for r in RULES
         for s in range(seeds)
     ]
-    with ProcessPoolExecutor() as pool:
+    with ProgressPool() as pool:
         res = iter(pool.map(_train_all_metrics, cfgs))
     lines = [
         f"### Claim learners (lam = 0, {seeds} seeds, {n} episodes, last-50 mean ± 95% CI)\n",

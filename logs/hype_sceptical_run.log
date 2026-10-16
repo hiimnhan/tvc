@@ -1,7 +1,6 @@
-| 0 | 5.749 ± 0.157 | 5.749 ± 0.157 | nan ± nan | 0.000 ± 0.000 |
-| 1 | 5.621 ± 0.207 | 5.489 ± 0.191 | 7.070 ± 0.502 | 0.181 ± 0.012 |
-| 2 | 5.681 ± 0.273 | 5.472 ± 0.278 | 6.725 ± 0.399 | 0.324 ± 0.015 |
-| 3 | 5.419 ± 0.163 | 5.120 ± 0.172 | 6.317 ± 0.324 | 0.438 ± 0.011 |
+/Users/nhanncv/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 5 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+ |
 | 6 | 4.910 ± 0.171 | 4.414 ± 0.143 | 5.407 ± 0.233 | 0.688 ± 0.014 |
 | 9 | 4.288 ± 0.145 | 3.735 ± 0.269 | 4.473 ± 0.135 | 0.831 ± 0.010 |
 | 11 | 3.937 ± 0.128 | 3.240 ± 0.257 | 4.000 ± 0.128 | 0.894 ± 0.008 |
